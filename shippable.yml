@@ -17,6 +17,7 @@ install:
   - yarn build
   - yarn lint
   - yarn add $TYPESCRIPT
+  - yarn run execution-tests
 env:
   - TYPESCRIPT=typescript@3.2.1
   - TYPESCRIPT=typescript@next
