@@ -30,9 +30,8 @@ jobs:
            - yarn lint
            - yarn add $TYPESCRIPT 
 install:
-      - ENV = $TARGET
-      - uname -m
-      - yarn install
-      - yarn build
-      - yarn lint
-      - yarn add $TYPESCRIPT
+   - uname -m
+   - yarn install
+   - yarn build
+   - yarn lint
+   - yarn add $TYPESCRIPT
