@@ -10,8 +10,8 @@ runtime:
   nodePool: default_node_pool
 before_install:
   - uname -m
-  - apt-get install chromium-browser
-  - chromium-browser --version
+  - apt-get install chrome
+  - chrome --version
 addons:
   chrome: stable  
 install:
