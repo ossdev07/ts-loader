@@ -1,7 +1,5 @@
 os:
   - linux
-addons:
-  chrome: stable
 language: node_js
 node_js:
   - "6"
@@ -12,6 +10,8 @@ runtime:
   nodePool: default_node_pool
 before_install:
   - uname -m
+addons:
+  chrome: stable  
 install:
   - yarn install
   - yarn build
