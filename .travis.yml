@@ -21,7 +21,7 @@ env:
     - TYPESCRIPT=typescript@2.6.1
     - TYPESCRIPT=typescript@2.5.2
     - TYPESCRIPT=typescript@2.4.1
-matrix:
+jobs:
     include:
          env: TARGET=aarch64-unknown-linux-gnu
          install:
@@ -29,8 +29,7 @@ matrix:
            - yarn install
            - yarn build
            - yarn lint
-           - yarn add $TYPESCRIPT
-         
+           - yarn add $TYPESCRIPT 
 install:
       - uname -m
       - yarn install
