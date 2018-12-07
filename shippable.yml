@@ -9,7 +9,9 @@ node_js:
   - "10"
 sudo: required
 runtime:
-  nodePool: shippable_shared_aarch64
+  nodePool: default_node_pool
+before_install:
+  - uname -m
 install:
   - yarn install
   - yarn build
