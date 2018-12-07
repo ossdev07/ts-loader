@@ -30,4 +30,4 @@ env:
   - TYPESCRIPT=typescript@2.4.1
 build:
 ci:
-- yarn test
+- yarn run execution-tests
