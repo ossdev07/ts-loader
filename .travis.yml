@@ -1,3 +1,30 @@
+include:
+  - env: TARGET_X=aarch64-unknown-linux-gnu CC_X=aarch64-linux-gnu-gcc FEATURES_X=--features=rsa_signing MODE_X=DEBUG KCOV=0
+    os:linux
+    addons:
+      chrome: stable
+    language: node_js
+    node_js:
+      - "6"
+      - "8"
+      - "10"
+    sudo: required
+    install:
+      - yarn install
+      - yarn build
+      - yarn lint
+      - yarn add $TYPESCRIPT
+    env:
+      - TYPESCRIPT=typescript@3.2.1
+      - TYPESCRIPT=typescript@next
+      - TYPESCRIPT=typescript@3.1.1
+      - TYPESCRIPT=typescript@3.0.1
+      - TYPESCRIPT=typescript@2.9.2
+      - TYPESCRIPT=typescript@2.8.1
+      - TYPESCRIPT=typescript@2.7.1
+      - TYPESCRIPT=typescript@2.6.1
+      - TYPESCRIPT=typescript@2.5.2
+      - TYPESCRIPT=typescript@2.4.1
 os:
   - linux
 addons:
@@ -9,6 +36,7 @@ node_js:
   - "10"
 sudo: required
 install:
+  - uname -m
   - yarn install
   - yarn build
   - yarn lint
