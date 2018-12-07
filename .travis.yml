@@ -10,15 +10,6 @@ node_js:
 sudo: required
 include:
   - env: TARGET_X=aarch64-unknown-linux-gnu CC_X=aarch64-linux-gnu-gcc FEATURES_X=--features=rsa_signing MODE_X=DEBUG KCOV=0
-    os:linux
-    addons:
-      chrome: stable
-    language: node_js
-    node_js:
-      - "6"
-      - "8"
-      - "10"
-    sudo: required
     install:
       - yarn install
       - yarn build
