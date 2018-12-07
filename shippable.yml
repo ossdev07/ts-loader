@@ -11,7 +11,7 @@ runtime:
 before_install:
   - uname -m
   - apt-get install chromium-browser
-  - chromium --version
+  - chromium-browser --version
 addons:
   chrome: stable  
 install:
