@@ -25,6 +25,7 @@ matrix:
     include:
          env: TARGET=aarch64-unknown-linux-gnu
 install:
+      -$TARGET
       - uname -m
       - yarn install
       - yarn build
