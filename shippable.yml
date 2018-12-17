@@ -12,7 +12,7 @@ node_js:
 sudo: required
 
 install:
-  - apt-get install chromium-bowser
+  - apt-get install chromium-browser
   - chromium-browser --version
   - export CHROME_BIN=chromium-browser
   - yarn install
