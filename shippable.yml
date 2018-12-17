@@ -7,8 +7,6 @@ addons:
 language: node_js
 
 node_js:
-  - "6"
-  - "8"
   - "10"
 
 sudo: required
@@ -41,6 +39,5 @@ notifications:
 
 build:
   ci:
-    - npm install
-    - npm test
+    - yarn test
   
