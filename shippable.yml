@@ -1,26 +1,25 @@
 os:
   - linux
+
+addons:
+  chrome: stable
+
 language: node_js
+
 node_js:
   - "6"
   - "8"
   - "10"
+
 sudo: required
-runtime:
-  nodePool: default_node_pool
-before_install:
-  - uname -m
-  - apt-get install chrome
-  - chrome --version
-addons:
-  chrome: stable  
+
 install:
   - yarn install
   - yarn build
   - yarn lint
   - yarn add $TYPESCRIPT
-  - yarn run execution-tests
 env:
+  - XUNIT_FILE=shippable/testresults/result.xml
   - TYPESCRIPT=typescript@3.2.1
   - TYPESCRIPT=typescript@next
   - TYPESCRIPT=typescript@3.1.1
@@ -31,7 +30,17 @@ env:
   - TYPESCRIPT=typescript@2.6.1
   - TYPESCRIPT=typescript@2.5.2
   - TYPESCRIPT=typescript@2.4.1
-build:
 
-ci:
-- yarn run execution-tests
+runtime:
+  nodePool: shippable_shared_aarch64
+
+notifications:
+  email:
+    recipients:
+    - shsakshi97@gmail.com
+
+build:
+  ci:
+    - npm install
+    - npm test
+  
