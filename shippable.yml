@@ -33,7 +33,7 @@ env:
   - TYPESCRIPT=typescript@2.4.1
 
 runtime:
-  nodePool: shippable_shared_aarch64
+  nodePool: default_node_pool
 
 notifications:
   email:
